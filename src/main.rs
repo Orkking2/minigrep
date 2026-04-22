@@ -164,19 +164,18 @@ mod tests {
         );
     }
 
-    // TODO: Fix.
-    // #[test]
-    // fn no_print_flag_defaults_to_false_and_enables_with_long_flag() {
-    //     let args =
-    //         Args::try_parse_from(["minigrep", "-f", "src/main.rs", "-n", "why", "--no-print"])
-    //             .unwrap();
+    #[test]
+    fn summary_flag_defaults_to_false_and_enables_with_long_flag() {
+        let args =
+            Args::try_parse_from(["minigrep", "-f", "src/main.rs", "-n", "why", "--summary"])
+                .unwrap();
 
-    //     assert!(args.no_print);
+        assert!(args.summary);
 
-    //     let args = Args::try_parse_from(["minigrep", "-f", "src/main.rs", "-n", "why"]).unwrap();
+        let args = Args::try_parse_from(["minigrep", "-f", "src/main.rs", "-n", "why"]).unwrap();
 
-    //     assert!(!args.no_print);
-    // }
+        assert!(!args.summary);
+    }
 
     #[test]
     fn expand_tilde_uses_supplied_home_directory() {
