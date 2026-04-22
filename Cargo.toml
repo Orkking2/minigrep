@@ -1,0 +1,8 @@
+[package]
+name = "minigrep"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+clap = { version = "4.6.1", features = ["derive"] }
+tokio = { version = "=1.50.0", features = ["rt-multi-thread", "fs", "macros"] }
